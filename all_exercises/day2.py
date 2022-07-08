@@ -1,4 +1,4 @@
-#Tip Calculator
+#Tip  Calculator
 
 def tipPercentage(bill_amount, tip_percentage, people):
     total_bill = bill_amount + (bill_amount * tip_percentage/100)
