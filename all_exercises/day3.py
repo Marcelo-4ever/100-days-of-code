@@ -23,7 +23,7 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 
 print('Welcome to Treasure Island. \nYour mission is to find the treasure.\nLeft or right? ')
 left_right = str(input('Type Right/Left: ')).upper()
-if left_right in 'LEFT':
+if left_right in 'RIGHT':
     
     print('''                      -     =    .--._
                     - - ~_=  =~_- = - `.  `-.
@@ -41,23 +41,52 @@ if left_right in 'LEFT':
             --==~_==- =__ ~-=  - -    .'       `---'
     ''')
 
-print('''Nice, you made it to the next level''')
-print('''_                                                           
-  | |                                                          
-  | |_ _ __ ___  __ _ ___ _   _ _ __ ___ _ __ ___   __ _ _ __  
-  | __| '__/ _ \/ _` / __| | | | '__/ _ \ '_ ` _ \ / _` | '_ \ 
-  | |_| | |  __/ (_| \__ \ |_| | | |  __/ | | | | | (_| | |_) |
-  \__|_|  \___|\__,_|___/\__,_|_|  \___|_| |_| |_|\__,_| .__/ 
-                                                        | |    
-                                                        |_| 
-  ''')
-
- print('''
-                    (`.
-                    \ `.
-                      )  `._..---._
-    \`.       __...---`         o  )
-    \ `._,--'           ,    ___,'
-      ) ,-._          \  )   _,-'
-    /,'    ``--.._____\/--''
-        ''')
+    print("Sonic got the treasure before you, try again.")
+elif left_right == 'LEFT':
+    print('''_                                                           
+    | |                                                          
+    | |_ _ __ ___  __ _ ___ _   _ _ __ ___ _ __ ___   __ _ _ __  
+    | __| '__/ _ \/ _` / __| | | | '__/ _ \ '_ ` _ \ / _` | '_ \ 
+    | |_| | |  __/ (_| \__ \ |_| | | |  __/ | | | | | (_| | |_) |
+    \__|_|  \___|\__,_|___/\__,_|_|  \___|_| |_| |_|\__,_| .__/ 
+                                                            | |    
+                                                            |_| 
+    ''')
+    print('Nice, you made it to the next level!')
+    swim_wait = str(input('Your map shows that you need to get to Treasure Island, you can wait to board a ship or swim across the sea, pick one: \nType Swim/Wait:')).lower()
+    if swim_wait in 'swim':
+        print('''
+                        (`.
+                        \ `.
+                        )  `._..---._
+        \`.       __...---`         o  )
+        \ `._,--'           ,    ___,'
+        ) ,-._          \  )   _,-'
+        /,'    ``--.._____\/--''
+            ''')
+        print('Unfortunately, you were eaten by a Great White Shark, try again!')
+    elif swim_wait in 'wait':
+        print('Nice, you made it to the next level, you are pretty good at this! ')
+        print('Welcome to: ')
+        print ('''
+     _                                     _     _                 _ 
+    | |                                   (_)   | |               | |
+    | |_ _ __ ___  __ _ ___ _   _ _ __ ___ _ ___| | __ _ _ __   __| |
+    | __| '__/ _ \/ _` / __| | | | '__/ _ \ / __| |/ _` | '_ \ / _` |
+    | |_| | |  __/ (_| \__ \ |_| | | |  __/ \__ \ | (_| | | | | (_| |
+    \__|_|  \___|\__,_|___/\__,_|_|  \___|_|___/_|\__,_|_| |_|\__,_|
+    ''')
+        dig_cave = str(input("Now that you've made to Treasure Island, you can dig or search the cave. \nType Dig/Search")).lower() 
+        if dig_cave in 'dig':
+            print("You've found the treasure, congratulations!")
+        else: 
+            print('''
+      _                     
+      | |                    
+      | |__   ___  __ _ _ __ 
+      | '_ \ / _ \/ _` | '__|
+      | |_) |  __/ (_| | |   
+      |_.__/ \___|\__,_|_|   
+                  ''')
+            print('You were eaten by a bear, game over! :/')
+        
