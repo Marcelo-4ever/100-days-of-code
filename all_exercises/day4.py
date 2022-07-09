@@ -2,8 +2,6 @@
 from random import randint 
 from time import sleep
 
-computer = str(randint(0,2))
-
 def validateChoice(player_choice):
     while True:
         if len(player_choice[0]) == 1:    #validade if it was written only ONE number
@@ -18,34 +16,37 @@ def validateChoice(player_choice):
         continue
 
 def result(player):
-    if validateChoice(player) == '0':
-        if computer in '0':
-            return "It's a tie!"
-        if computer in '1':
-            return "Computer won!"
-        if computer in '2':
-            return "You won! Amazing!"
-    elif validateChoice(player) == '1':
-        if computer == '0':
-            return "You won! Amazing!"
-        if computer == '1':
-            return "It's a tie!"
-        if computer == '2':
-            return "Computer won!"
-    elif validateChoice(player) == '2':
-        if computer == '0':
-            return "Computer won!"
-        if computer == '1': 
-            return 'You won! Amazing!'
-        if computer == '2':
-            return "It's a tie!"
-        
+    try:
+        if validateChoice(player) == '0':
+            if computer in '0':
+                return "It's a tie!"
+            if computer in '1':
+                return "Computer won!"
+            if computer in '2':
+                return "You won! Amazing!"
+        elif validateChoice(player) == '1':
+            if computer == '0':
+                return "You won! Amazing!"
+            if computer == '1':
+                return "It's a tie!"
+            if computer == '2':
+                return "Computer won!"
+        elif validateChoice(player) == '2':
+            if computer == '0':
+                return "Computer won!"
+            if computer == '1': 
+                return 'You won! Amazing!'
+            if computer == '2':
+                return "It's a tie!"
+    except IndexError:
+        return 'You have to write an option!'
 
 print('This is the Rock Paper Scissors game!')
 sleep(1)
 print('Make your choice: 0 for Rock, 1 for Paper or 2 for Scissors')
 sleep(1)
-player = str(input('0 / 1 / 2: ')).split()  
-print(computer)
-print(result(player))
+while True:
+    computer = str(randint(0,2)) 
+    player = str(input('0 / 1 / 2: ')).split()  
+    print(result(player))
 
