@@ -66,7 +66,6 @@ for each_list in copy_list:
 print('Here is your password: ',end='')
 
 size = len(my_list) # here I have the length to make a loop that goes through ALL the values 
-counter = 0
 for character in range(size): 
     list_size = len(my_list) - 1 #len start in 1, so there is the chance of having an index out of range 
     choose_password_index = randint(0, list_size) #here we use the randint to choose one index so the password gets more random
