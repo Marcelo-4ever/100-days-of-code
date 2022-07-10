@@ -2,7 +2,6 @@
 Password Generator
 Using for loop, list, and range()
 """
-
 from random import randint
 my_list = [] # a list with all list of each function 
 
@@ -43,10 +42,16 @@ def get_symbols(x):
     return my_symbol_list
     
         
-        
-letters = int(input('How many letters would like in your password? '))
-numbers = int(input('How many numbers? '))
-symbols = int(input('How many symbols? '))
+#!Principal Program
+while True:
+    letters = str(input('How many letters would like in your password? '))
+    numbers = str(input('How many numbers? '))
+    symbols = str(input('How many symbols? '))
+    if not letters.isdigit() or not numbers.isdigit() or not symbols.isdigit():
+        print('You have to write a number! Try again!')    
+        continue
+    break
+letters, numbers, symbols = int(letters), int(numbers), int(symbols)
 get_letters(letters)
 get_numbers(numbers)
 get_symbols(symbols)
@@ -64,10 +69,12 @@ size = len(my_list) # here I have the length to make a loop that goes through AL
 counter = 0
 for character in range(size): 
     list_size = len(my_list) - 1 #len start in 1, so there is the chance of having an index out of range 
-    choose_index = randint(0, list_size) #here we use the randint to choose one index so the password gets more random
-    print(my_list[choose_index],end= '') #we get the value from the list
-    del my_list[choose_index] #we delete the value so we can't repeat it again
+    choose_password_index = randint(0, list_size) #here we use the randint to choose one index so the password gets more random
+    print(my_list[choose_password_index],end= '') #we get the value from the list
+    del my_list[choose_password_index] #we delete the value so we can't repeat it again
     
     
     #print(my_list[randint(0, list_size)])
-    
+
+#this code may have more lists that it needed, but I changed the whole code a few times, so I will see it another day :)
+
