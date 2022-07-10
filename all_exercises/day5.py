@@ -51,22 +51,22 @@ get_letters(letters)
 get_numbers(numbers)
 get_symbols(symbols)
 
-copy_list = my_list[:]
-my_list.clear()
+copy_list = my_list[:] # a copy of all lists inside a list
+my_list.clear() #clear the original so I can append() each value without the '[]' of the lists 
 for each_list in copy_list:
     for character in each_list: 
-        my_list.append(character)
+        my_list.append(character) #adding one by one 
 
 
 print('Here is your password: ',end='')
 
-my_list_copy = my_list[:]
+size = len(my_list) # here I have the length to make a loop that goes through ALL the values 
 counter = 0
-for character in my_list_copy:
-    list_size = len(my_list) - 1
-    choose_index = randint(0, list_size)
-    print(my_list[choose_index],end= '')
-    del my_list[choose_index]
+for character in range(size): 
+    list_size = len(my_list) - 1 #len start in 1, so there is the chance of having an index out of range 
+    choose_index = randint(0, list_size) #here we use the randint to choose one index so the password gets more random
+    print(my_list[choose_index],end= '') #we get the value from the list
+    del my_list[choose_index] #we delete the value so we can't repeat it again
     
     
     #print(my_list[randint(0, list_size)])
